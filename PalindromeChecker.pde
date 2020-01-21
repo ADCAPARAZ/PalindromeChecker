@@ -1,5 +1,6 @@
 public void setup()
 {
+
   String lines[] = loadStrings("palindromes.txt");
   println("there are " + lines.length + " lines");
   for (int i=0; i < lines.length; i++) 
@@ -16,13 +17,32 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  //your code here
-  return false;
+  word.toLowerCase();
+  String result = new String();
+  for(int i = 0; i < word.length(); i++){
+    if(Character.isLetter(word.charAt(i))){
+      result = result + word.substring(i,i+1);
+      System.out.println(result);
+    }
+  }
+
+  if(word.equals(reverse(word)))
+    return true;
+  else
+    return false;
 }
 public String reverse(String str)
 {
-    String sNew = new String();
-    //your code here
+  str.toLowerCase();
+  String sNew = new String();
+  for(int i = str.length()-1; i >= 0; i--){
+    sNew = sNew + str.charAt(i);
+  }
+  for(int i = 0; i < str.length(); i++){
+    if(Character.isLetter(str.charAt(i))){
+      sNew = sNew + str.substring(i,i+1);
+    }
+  }
     return sNew;
 }
 
