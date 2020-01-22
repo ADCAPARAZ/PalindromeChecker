@@ -22,28 +22,24 @@ public boolean palindrome(String word)
   for(int i = 0; i < word.length(); i++){
     if(Character.isLetter(word.charAt(i))){
       result = result + word.substring(i,i+1);
-      System.out.println(result);
     }
   }
 
-  if(word.equals(reverse(word)))
+  if(result.equals(reverse(word)))
     return true;
   else
     return false;
 }
 public String reverse(String str)
 {
-  str.toLowerCase();
+
   String sNew = new String();
   for(int i = str.length()-1; i >= 0; i--){
-    sNew = sNew + str.charAt(i);
-  }
-  for(int i = 0; i < str.length(); i++){
     if(Character.isLetter(str.charAt(i))){
       sNew = sNew + str.substring(i,i+1);
     }
   }
-    return sNew;
+    return sNew.toLowerCase();
 }
 
 
